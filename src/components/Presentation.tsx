@@ -99,14 +99,14 @@ const Slide1 = () => (
       transition={{ duration: 0.5 }}
       className="text-sm font-mono text-[#D97757] mb-6 tracking-widest relative z-10"
     >
-      CLAUDE CODE 工作区组织 · 第 1 集
+      EP.01 · 为 AI 协作组织工作区
     </motion.div>
 
     <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#1F1E1D] mb-8 leading-snug relative z-10">
-      一个人管四十个项目，<br/>靠的不是记性
+      刚安装了 Claude Code？<br/>这个视频让你少走三个月弯路
     </h1>
     <p className="text-lg md:text-xl text-[#1F1E1D]/70 leading-relaxed max-w-2xl relative z-10">
-      搁了三周的项目，起 claude 就能接着上次讲。<br/>
+      我一个人同时维护四十来个项目，靠的不是记性 ——<br/>
       该记的，全从脑子里、从对话里，挪进了文件。
     </p>
   </div>
