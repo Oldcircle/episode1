@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 第 1 集 · 一个人管四十个项目，靠的不是记性
 
-# Run and deploy your AI Studio app
+AI 协作工作区组织方法的演示页（视频第 1 集录屏素材）。键盘步进式幻灯片，11 页，覆盖：组织层 / 规则层（CLAUDE.md 渐进式加载）/ 记忆层 / 上下文 token 累积机制 / 开源模板 CTA。
 
-This contains everything you need to run your app locally.
+**在线访问**：https://oldcircle.github.io/episode1/
 
-View your app in AI Studio: https://ai.studio/apps/3b154722-8764-40bf-9837-1f5070771c52
+## 操作
 
-## Run Locally
+- `→` / `空格`：下一步（页内动画逐步播放）
+- `←`：上一步
+- URL hash 直达：`/#4` 第 4 页，`/#4-2` 第 4 页第 2 步（补录时从任意画面开始）
 
-**Prerequisites:**  Node.js
+## 本地运行
 
+```bash
+npm install
+npm run dev   # http://localhost:3000
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 技术栈
+
+Vite 6 + React 19 + Tailwind CSS v4 + motion（Framer Motion）。全部内容在 `src/components/Presentation.tsx`。
+
+## 部署
+
+```bash
+npm run build
+npx gh-pages -d dist   # 发布到 gh-pages 分支 → GitHub Pages
+```
+
+## 配套
+
+- 工作区模板（视频 CTA 指向）：https://github.com/Oldcircle/workspace-setup
+- 配套 slash commands：https://github.com/Oldcircle/claude-workspace-skills
