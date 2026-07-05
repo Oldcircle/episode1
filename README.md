@@ -1,6 +1,6 @@
-# 第 1 集 · 刚安装了 Claude Code？这个视频让你少走三个月弯路
+# 第 1 集 · 刚开始用 AI 编程助手？这个视频让你少走三个月弯路
 
-AI 协作工作区组织方法的演示页（视频第 1 集录屏素材）。键盘步进式幻灯片，11 页，覆盖：组织层 / 规则层（CLAUDE.md 渐进式加载）/ 记忆层 / 上下文 token 累积机制 / 开源模板 CTA。
+AI 协作工作区组织方法的演示页（视频第 1 集录屏素材）。键盘步进式幻灯片，11 页，覆盖：组织层 / 规则层（AGENTS.md 渐进式加载）/ 记忆层 / 上下文 token 累积机制 / 「全套打包成一个 skill」的 CTA。
 
 **在线访问**：https://oldcircle.github.io/episode1/
 
@@ -30,5 +30,5 @@ npx gh-pages -d dist   # 发布到 gh-pages 分支 → GitHub Pages
 
 ## 配套
 
-- 工作区模板（视频 CTA 指向）：https://github.com/Oldcircle/workspace-setup
-- 配套 slash commands：https://github.com/Oldcircle/claude-workspace-skills
+- 全套方法打包成 skill `ai-workspace`（+ 配套 onboard / dev-init）：https://github.com/Oldcircle/workspace-setup
+- 装上 skill，agent 直接内建三层工作区法；仓库同时含 `setup.sh` 一键铺环境

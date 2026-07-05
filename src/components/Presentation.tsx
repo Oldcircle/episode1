@@ -103,7 +103,7 @@ const Slide1 = () => (
     </motion.div>
 
     <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#1F1E1D] mb-8 leading-snug relative z-10">
-      刚安装了 Claude Code？<br/>这个视频让你少走三个月弯路
+      刚开始用 AI 编程助手？<br/>这个视频让你少走三个月弯路
     </h1>
     <p className="text-lg md:text-xl text-[#1F1E1D]/70 leading-relaxed max-w-2xl relative z-10">
       我一个人同时维护四十来个项目，靠的不是记性 ——<br/>
@@ -124,9 +124,9 @@ const Slide2 = ({ step }: { step: number }) => (
         <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
       </div>
       <div className="space-y-3 leading-relaxed">
-        <TerminalTypewriter prompt="~/OpenSource/projects/ai/paper-translator $" text="claude" step={step} showAt={0} />
+        <TerminalTypewriter prompt="~/OpenSource/projects/ai/paper-translator $" text="agent" step={step} showAt={0} />
         <FadeIn step={step} showAt={1}>
-          <p><span className="text-purple-400">Claude:</span> 读取 CLAUDE.md、STATUS.md …</p>
+          <p><span className="text-purple-400">Agent:</span> 读取 AGENTS.md、STATUS.md …</p>
         </FadeIn>
 
         <div className="pl-4 border-l-2 border-emerald-500/30 my-3 py-1 text-gray-400 min-h-[70px]">
@@ -136,7 +136,7 @@ const Slide2 = ({ step }: { step: number }) => (
         </div>
 
         <FadeIn step={step} showAt={5}>
-          <p><span className="text-purple-400">Claude:</span> 上次停在 Phase 2，下一步是端到端验证。</p>
+          <p><span className="text-purple-400">Agent:</span> 上次停在 Phase 2，下一步是端到端验证。</p>
           <p className="ml-16 text-gray-300">.env.local 里 key 还是空的 —— 要我带你配好、</p>
           <p className="ml-16 text-gray-300">然后跑一篇 PDF 试试吗？</p>
           <p className="mt-4"><span className="text-[#D97757]">❯</span> <span className="animate-pulse font-bold text-white">_</span></p>
@@ -250,7 +250,7 @@ const Slide4 = ({ step }: { step: number }) => (
       <div className="bg-white rounded-2xl border border-[#1F1E1D]/5 shadow-sm p-4 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#D97757]"></div>
         <div className="font-medium text-[#1F1E1D] mb-2 text-sm flex items-center gap-2">
-          <Spark className="w-4 h-4 text-[#D97757]" /> 工作区根 CLAUDE.md 里，还养着一张「项目索引」表（节选）
+          <Spark className="w-4 h-4 text-[#D97757]" /> 工作区根 AGENTS.md 里，还养着一张「项目索引」表（节选）
         </div>
         <div className="font-mono text-[12px] space-y-1">
           {INDEX_ROWS.map((r, i) => (
@@ -285,7 +285,7 @@ const Slide4 = ({ step }: { step: number }) => (
 );
 
 // ---------------------------------------------------------------------------
-// Slide 5 · ② 规则层：CLAUDE.md
+// Slide 5 · ② 规则层：AGENTS.md
 // ---------------------------------------------------------------------------
 const DOC_ROWS = [
   { name: 'README-old.md', tag: '旧' },
@@ -336,24 +336,24 @@ const Slide5 = ({ step }: { step: number }) => (
       <div className="space-y-5">
         <FadeIn step={step} showAt={0} className="bg-white p-5 rounded-2xl shadow-sm border border-purple-100 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
-          <div className="font-mono text-purple-800 font-medium mb-1 border-b border-purple-100 inline-block pb-0.5">每个项目一个 CLAUDE.md</div>
+          <div className="font-mono text-purple-800 font-medium mb-1 border-b border-purple-100 inline-block pb-0.5">每个项目一个 AGENTS.md</div>
           <p className="text-[#1F1E1D]/70 mt-2 text-sm leading-relaxed">
             就是个纯文本说明书：技术栈、目录约定、常用命令、哪些坑别踩。<br/>
-            Claude 一启动先读它 —— 所以不用每次重新交代。
+            Agent 一启动先读它 —— 所以不用每次重新交代。
           </p>
           <p className="mt-3 text-xs text-[#1F1E1D]/40">
-            * 这写法不是我发明的，Karpathy 也在用自己的 CLAUDE.md —— 与其口头解释，不如写下来让 AI 自己读。
+            * 这写法不是我发明的，Karpathy 也在用自己的 AGENTS.md —— 与其口头解释，不如写下来让 AI 自己读。
           </p>
         </FadeIn>
 
         <FadeIn step={step} showAt={4} className="bg-white p-5 rounded-2xl shadow-sm border border-[#1F1E1D]/5 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-[#D97757]"></div>
           <div className="font-medium text-[#1F1E1D] text-sm mb-3 flex items-center gap-2">
-            <Spark className="w-4 h-4 text-[#D97757]" /> AGENTS.md → CLAUDE.md 软链
+            <Spark className="w-4 h-4 text-[#D97757]" /> AGENTS.md · 一份文件喂所有 Agent
           </div>
           <div className="flex items-center gap-3">
             <div className="flex flex-col gap-2 shrink-0">
-              {['Claude Code', 'Codex', 'Cursor'].map((t) => (
+              {['Codex', 'Cursor', 'Gemini CLI'].map((t) => (
                 <span key={t} className="text-[10px] font-mono bg-[#FAF9F5] border border-[#1F1E1D]/10 rounded-md px-2 py-1 text-[#1F1E1D]/70">{t}</span>
               ))}
             </div>
@@ -373,10 +373,10 @@ const Slide5 = ({ step }: { step: number }) => (
               transition={{ delay: step >= 4 ? 0.8 : 0, type: 'spring', stiffness: 260, damping: 20 }}
               className="font-mono text-xs bg-purple-50 border border-purple-200 text-purple-800 rounded-lg px-3 py-2 shadow-sm"
             >
-              CLAUDE.md
+              AGENTS.md
             </motion.div>
           </div>
-          <p className="mt-3 text-xs text-[#1F1E1D]/50">一份规则喂所有工具，换工具零迁移、不维护两份。</p>
+          <p className="mt-3 text-xs text-[#1F1E1D]/50">一份规则喂所有 Agent，换工具零迁移、不用每家维护一份。</p>
         </FadeIn>
       </div>
 
@@ -386,7 +386,7 @@ const Slide5 = ({ step }: { step: number }) => (
           重点：活跃文档清单
         </div>
         <p className="text-purple-900/70 text-sm mb-4 relative z-10">
-          CLAUDE.md 里维护 <code className="bg-white px-1.5 py-0.5 rounded border border-purple-200 text-xs">## 活跃文档</code> 小节，列出当前有效的文档。
+          AGENTS.md 里维护 <code className="bg-white px-1.5 py-0.5 rounded border border-purple-200 text-xs">## 活跃文档</code> 小节，列出当前有效的文档。
           AI 只读清单里的 —— 不猜、不乱翻。
         </p>
         <div className="flex gap-3 relative z-10">
@@ -440,7 +440,7 @@ const CtxBlock = ({ show, delay = 0, cls, label, tok, tag }: any) => (
 const Slide6 = ({ step }: { step: number }) => (
   <SlideLayout title="② 规则层 · 渐进式加载">
     <div className="bg-[#1A1918] rounded-xl px-4 py-2.5 font-mono text-[12px] text-gray-300 border border-[#1F1E1D]/20 mb-4 max-w-5xl space-y-1">
-      <TerminalTypewriter prompt="$" text="cd ~/OpenSource/projects/ai/fable && claude" step={step} showAt={0} speed={0.012} />
+      <TerminalTypewriter prompt="$" text="cd ~/OpenSource/projects/ai/fable && agent" step={step} showAt={0} speed={0.012} />
       <TerminalTypewriter prompt="●" text="Read fable/engine/renderer.ts" step={step} showAt={2} speed={0.015} className="text-gray-400" />
     </div>
 
@@ -458,25 +458,25 @@ const Slide6 = ({ step }: { step: number }) => (
         )}
         <div className="space-y-2 relative z-0">
           <div className="flex items-center gap-2">
-            <TreeNode on={step >= 1} delay={1.0} color={TREE_COLORS.blue} label="~/.claude/CLAUDE.md" />
+            <TreeNode on={step >= 1} delay={1.0} color={TREE_COLORS.blue} label="~/.agent/AGENTS.md" />
             <span className="text-[10px] font-sans text-[#1F1E1D]/35">全局偏好</span>
           </div>
           <div className="text-[#1F1E1D]/45">~/OpenSource/</div>
           <div className="pl-4 space-y-2">
             <div className="flex items-center gap-2">
-              <TreeNode on={step >= 1} delay={0.5} color={TREE_COLORS.purple} label="├─ CLAUDE.md" />
+              <TreeNode on={step >= 1} delay={0.5} color={TREE_COLORS.purple} label="├─ AGENTS.md" />
               <span className="text-[10px] font-sans text-[#1F1E1D]/35">工作区规范 + 项目索引</span>
             </div>
             <div className="text-[#1F1E1D]/45">└─ projects/ai/fable/ <span className="text-[#D97757] text-[10px] font-sans">← 启动目录</span></div>
             <div className="pl-4 space-y-2">
               <div className="flex items-center gap-2">
-                <TreeNode on={step >= 1} delay={0} color={TREE_COLORS.emerald} label="├─ CLAUDE.md" />
+                <TreeNode on={step >= 1} delay={0} color={TREE_COLORS.emerald} label="├─ AGENTS.md" />
                 <span className="text-[10px] font-sans text-[#1F1E1D]/35">项目说明书</span>
               </div>
               <div className="text-[#1F1E1D]/45">└─ engine/</div>
               <div className="pl-4 space-y-2">
                 <div className="flex items-center gap-2">
-                  <TreeNode on={step >= 2} delay={0.25} color={TREE_COLORS.orange} label="├─ CLAUDE.md" />
+                  <TreeNode on={step >= 2} delay={0.25} color={TREE_COLORS.orange} label="├─ AGENTS.md" />
                   <span className="text-[10px] font-sans text-[#1F1E1D]/35">子模块规则</span>
                 </div>
                 <div>
@@ -490,12 +490,12 @@ const Slide6 = ({ step }: { step: number }) => (
 
       {/* 上下文窗口 */}
       <div className="flex-[1.05] border border-slate-200 bg-slate-50 rounded-2xl p-4 shadow-inner relative flex flex-col">
-        <div className="text-slate-600 font-medium mb-3 text-xs">Claude 上下文窗口</div>
+        <div className="text-slate-600 font-medium mb-3 text-xs">Agent 上下文窗口</div>
         <div className="flex-1 space-y-2">
-          <CtxBlock show={step >= 1} delay={1.0} cls="bg-blue-50 border-blue-200 text-blue-800" label="~/.claude/CLAUDE.md" tok="~0.3k tok" />
-          <CtxBlock show={step >= 1} delay={0.5} cls="bg-purple-50 border-purple-200 text-purple-800" label="~/OpenSource/CLAUDE.md" tok="~3k tok" />
-          <CtxBlock show={step >= 1} delay={0} cls="bg-emerald-50 border-emerald-200 text-emerald-800" label="fable/CLAUDE.md" tok="~1.5k tok" />
-          <CtxBlock show={step >= 2} delay={0.4} cls="bg-[#D97757]/10 border-[#D97757]/40 text-[#9a3412]" label="fable/engine/CLAUDE.md" tok="~0.8k tok" tag />
+          <CtxBlock show={step >= 1} delay={1.0} cls="bg-blue-50 border-blue-200 text-blue-800" label="~/.agent/AGENTS.md" tok="~0.3k tok" />
+          <CtxBlock show={step >= 1} delay={0.5} cls="bg-purple-50 border-purple-200 text-purple-800" label="~/OpenSource/AGENTS.md" tok="~3k tok" />
+          <CtxBlock show={step >= 1} delay={0} cls="bg-emerald-50 border-emerald-200 text-emerald-800" label="fable/AGENTS.md" tok="~1.5k tok" />
+          <CtxBlock show={step >= 2} delay={0.4} cls="bg-[#D97757]/10 border-[#D97757]/40 text-[#9a3412]" label="fable/engine/AGENTS.md" tok="~0.8k tok" tag />
           {step < 1 && <div className="text-[11px] text-slate-400 font-mono pt-2">（空 —— 等待启动）</div>}
         </div>
       </div>
@@ -504,11 +504,11 @@ const Slide6 = ({ step }: { step: number }) => (
     <div className="mt-4 space-y-2.5 text-sm text-[#1F1E1D]/70 max-w-5xl">
       <FadeIn step={step} showAt={1} className="flex gap-3 items-start">
         <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 shrink-0"></div>
-        <p><strong className="text-[#1F1E1D]">启动即全量、向上递归：</strong>从当前目录一路向上到根，沿途每个 CLAUDE.md <strong className="text-[#1F1E1D]">整份</strong>进入上下文（个人偏好 + 工作区规则 + 项目说明书，三层自动叠加）。</p>
+        <p><strong className="text-[#1F1E1D]">启动即全量、向上递归：</strong>从当前目录一路向上到根，沿途每个 AGENTS.md <strong className="text-[#1F1E1D]">整份</strong>进入上下文（个人偏好 + 工作区规则 + 项目说明书，三层自动叠加）。</p>
       </FadeIn>
       <FadeIn step={step} showAt={2} className="flex gap-3 items-start">
         <div className="w-1.5 h-1.5 rounded-full bg-[#D97757] mt-1.5 shrink-0"></div>
-        <p><strong className="text-[#1F1E1D]">向下按需懒加载：</strong>启动目录之下的子目录 CLAUDE.md 不随启动加载 —— AI 真去读那个目录的文件时，才拉进来。</p>
+        <p><strong className="text-[#1F1E1D]">向下按需懒加载：</strong>启动目录之下的子目录 AGENTS.md 不随启动加载 —— AI 真去读那个目录的文件时，才拉进来。</p>
       </FadeIn>
 
       <FadeIn step={step} showAt={3}>
@@ -522,7 +522,7 @@ const Slide6 = ({ step }: { step: number }) => (
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="h-full rounded-lg bg-rose-500 text-white text-[11px] font-medium flex items-center justify-center whitespace-nowrap overflow-hidden"
             >
-              8000 行巨型 CLAUDE.md —— 所有项目的所有规则
+              8000 行巨型 AGENTS.md —— 所有项目的所有规则
             </motion.div>
           </div>
           <span className="text-[11px] text-rose-600/80 shrink-0 leading-tight">每个会话每一轮<br/>都在为它付费</span>
@@ -550,7 +550,7 @@ const Slide7 = ({ step }: { step: number }) => (
           <p className="font-medium text-[#1F1E1D] text-lg mb-4">项目记忆是一组文档，不止是 STATUS：</p>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
-              <code className="bg-purple-50 border border-purple-200 shadow-sm px-2 py-1 rounded-md font-mono text-sm text-purple-800">CLAUDE.md</code>
+              <code className="bg-purple-50 border border-purple-200 shadow-sm px-2 py-1 rounded-md font-mono text-sm text-purple-800">AGENTS.md</code>
               <span className="text-[#1F1E1D]/60 pt-1">说明书（真相源）</span>
             </li>
             <li className="flex items-start gap-3">
@@ -581,7 +581,7 @@ const Slide7 = ({ step }: { step: number }) => (
 
         <FadeIn step={step} showAt={0} className="mb-6 relative z-10">
           <div className="bg-purple-50 border border-purple-200 p-4 rounded-xl shadow-sm text-sm">
-            <span className="font-mono font-bold text-purple-800">CLAUDE.md</span>
+            <span className="font-mono font-bold text-purple-800">AGENTS.md</span>
             <FadeIn step={step} showAt={2}>
               <div className="mt-3 text-xs bg-white p-3 rounded-lg border border-purple-100 shadow-sm space-y-2">
                 <div className="font-medium text-purple-500 mb-1">## 活跃文档</div>
@@ -631,14 +631,14 @@ const Slide8 = ({ step }: { step: number }) => (
   <SlideLayout title="③ 记忆层 · 跨项目经验 + 笔记">
     <div className="space-y-6 text-base md:text-lg text-[#1F1E1D] max-w-5xl">
       <FadeIn step={step} showAt={0}>
-        <p className="text-[#1F1E1D]/70">项目 CLAUDE.md = 说明书；Memory = 跨项目经验索引。</p>
+        <p className="text-[#1F1E1D]/70">项目 AGENTS.md = 说明书；Memory = 跨项目经验索引。</p>
       </FadeIn>
 
       <div className="flex flex-col md:flex-row gap-6 mt-6">
         {/* Memory Box */}
         <FadeIn step={step} showAt={1} className="flex-[1.1] bg-white p-6 rounded-2xl border border-[#1F1E1D]/5 shadow-sm relative overflow-hidden">
           <div className="absolute right-0 top-0 text-[120px] font-bold text-[#1F1E1D]/5 leading-none -mt-4 -mr-4 pointer-events-none">19</div>
-          <div className="font-mono text-[#1F1E1D]/40 font-medium mb-4">~/.claude/memory/</div>
+          <div className="font-mono text-[#1F1E1D]/40 font-medium mb-4">~/.agent/memory/</div>
           <div className="bg-slate-50 p-3 border border-slate-200 rounded-xl text-sm font-mono text-slate-700 mb-4 shadow-sm relative z-10">
             MEMORY.md <span className="text-xs font-sans text-slate-400 block mt-1">总索引，每次会话自动载入</span>
           </div>
@@ -899,32 +899,33 @@ const Slide10 = () => (
 );
 
 // ---------------------------------------------------------------------------
-// Slide 11 · 结尾 CTA：开源模板
+// Slide 11 · 结尾 CTA：全套打包成一个 skill
 // ---------------------------------------------------------------------------
 const AGENT_LINES = [
-  '克隆仓库…',
-  '读取 CLAUDE.md 与 setup.sh…',
-  '创建目录结构 projects/ forks/ vendor/ notes/ configs/…',
-  '部署全局规则与 Claude Code 配置…',
+  '拉取 workspace-setup…',
+  '把 ai-workspace 装进 ~/.agent/skills/…',
+  '三层工作区法已加载：组织 · 规则 · 记忆…',
+  '配套 onboard / dev-init 就位…',
 ];
 
 const Slide11 = ({ step }: { step: number }) => (
-  <SlideLayout title="这套工作区，已经开源" icon={false}>
+  <SlideLayout title="这期讲的一切，本身就是一个 skill" icon={false}>
     <div className="flex flex-col lg:flex-row gap-6 max-w-5xl items-stretch">
       <FadeIn step={step} showAt={0} className="flex-1">
         <div className="bg-white rounded-2xl border border-[#1F1E1D]/10 shadow-sm p-6 relative overflow-hidden h-full">
-          <div className="absolute top-0 left-0 w-1 h-full bg-[#1F1E1D]"></div>
-          <div className="flex items-center gap-2.5 mb-4">
+          <div className="absolute top-0 left-0 w-1 h-full bg-[#D97757]"></div>
+          <div className="flex items-center gap-2.5 mb-1">
             <Spark className="w-5 h-5 text-[#D97757] shrink-0" />
-            <span className="font-mono text-[13px] font-medium text-[#1F1E1D] whitespace-nowrap">github.com/Oldcircle/workspace-setup</span>
+            <span className="font-mono text-[15px] font-semibold text-[#1F1E1D]">skill · ai-workspace</span>
           </div>
+          <p className="text-xs text-[#1F1E1D]/50 mb-4">装上它，你的 agent 直接内建：</p>
           <ul className="space-y-3 text-sm text-[#1F1E1D]/70">
-            <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>工作区 CLAUDE.md 规范全文</li>
-            <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>一键 setup.sh</li>
-            <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>Claude Code 配置与自定义命令</li>
+            <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>三层法：目录即身份 / 规则渐进加载 / 记忆可续</li>
+            <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>配套 onboard · dev-init skill</li>
+            <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>setup.sh 一键铺目录 + 工作区规范</li>
             <li className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 rounded-full bg-[#D97757] shrink-0"></span>笔记库骨架</li>
           </ul>
-          <p className="mt-5 text-xs text-[#1F1E1D]/40">链接在简介 / 置顶评论。</p>
+          <p className="mt-5 text-xs text-[#1F1E1D]/40 font-mono">github.com/Oldcircle/workspace-setup</p>
         </div>
       </FadeIn>
 
@@ -937,7 +938,7 @@ const Slide11 = ({ step }: { step: number }) => (
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
             </div>
             <div className="space-y-2.5 leading-relaxed">
-              <TerminalTypewriter prompt="❯" text="把我的工作区照这个仓库配置好：github.com/Oldcircle/workspace-setup" step={step} showAt={1} speed={0.018} />
+              <TerminalTypewriter prompt="❯" text="把这个 skill 装上：github.com/Oldcircle/workspace-setup" step={step} showAt={1} speed={0.018} />
               {AGENT_LINES.map((line, i) => (
                 <FadeIn key={line} step={step} showAt={2} delay={i * 0.35} className="flex items-center gap-2">
                   <span className="text-emerald-400">✓</span>
@@ -945,7 +946,7 @@ const Slide11 = ({ step }: { step: number }) => (
                 </FadeIn>
               ))}
               <FadeIn step={step} showAt={2} delay={AGENT_LINES.length * 0.35 + 0.2}>
-                <p className="text-white font-medium mt-2">工作区就绪。重启 claude 生效。</p>
+                <p className="text-white font-medium mt-2">以后任何项目，说一句就接手 —— 不用再教。</p>
               </FadeIn>
             </div>
           </div>
@@ -955,9 +956,9 @@ const Slide11 = ({ step }: { step: number }) => (
 
     <FadeIn step={step} showAt={3}>
       <div className="mt-6 p-5 bg-[#1F1E1D] text-[#FAF9F5] rounded-2xl text-center shadow-lg max-w-5xl">
-        <p className="font-medium text-base md:text-lg">你不用手抄这期视频的任何东西 —— 把链接丢给你的 agent，它自己就把这节课学会了。</p>
+        <p className="font-medium text-base md:text-lg">你不用记这期视频的任何东西 —— 这套方法本身就是个 skill。装上它，你的 agent 直接全会。</p>
         <p className="text-[#FAF9F5]/50 text-xs mt-3 font-mono">
-          配套 slash commands：github.com/Oldcircle/claude-workspace-skills
+          github.com/Oldcircle/workspace-setup
           <span className="mx-2 text-[#D97757]">·</span>
           下一集：AI 为什么老忘事 —— 上下文、压缩与开新会话
         </p>
